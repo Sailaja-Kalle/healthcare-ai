@@ -1,0 +1,16 @@
+hospital_name,city,state,specialization,type,cost_range,phone,address,latitude,longitude
+Apollo Hospital,Hyderabad,Telangana,Cardiology,Private,High,040-23607777,"Jubilee Hills, Hyderabad",17.4318,78.4071
+Yashoda Hospital,Hyderabad,Telangana,Neurology,Private,High,040-45674567,"Somajiguda, Hyderabad",17.4239,78.4738
+NIMS Hospital,Hyderabad,Telangana,General,Government,Low,040-23489000,"Punjagutta, Hyderabad",17.4274,78.4601
+Apollo Hospital,Chennai,Tamil Nadu,Cardiology,Private,High,044-28290200,"Greams Road, Chennai",13.0569,80.2425
+Government General Hospital,Chennai,Tamil Nadu,General,Government,Low,044-25305000,"Park Town, Chennai",13.0839,80.2786
+AIIMS,New Delhi,Delhi,Multi-Specialty,Government,Low,011-26588500,"Ansari Nagar, Delhi",28.5672,77.2100
+Apollo Hospital,Delhi,Delhi,Cardiology,Private,High,011-26825858,"Sarita Vihar, Delhi",28.5355,77.2910
+Fortis Hospital,Bangalore,Karnataka,Orthopedics,Private,High,080-66214444,"Bannerghatta Road, Bangalore",12.8937,77.5975
+Manipal Hospital,Bangalore,Karnataka,Multi-Specialty,Private,High,080-22222222,"Old Airport Road, Bangalore",12.9591,77.6487
+Government Hospital,Rajahmundry,Andhra Pradesh,General,Government,Low,0883-2461234,"Main Road, Rajahmundry",17.0005,81.8040
+Apollo Hospital,Visakhapatnam,Andhra Pradesh,Multi-Specialty,Private,High,0891-2872888,"Waltair, Visakhapatnam",17.7231,83.3012
+Government General Hospital,Kurnool,Andhra Pradesh,General,Government,Low,08518-252323,"Kurnool Main Road",15.8281,78.0373
+AIIMS Mangalagiri,Guntur,Andhra Pradesh,Multi-Specialty,Government,Low,0863-2374000,"Mangalagiri, Guntur",16.4307,80.5525
+Narayana Hospital,Bangalore,Karnataka,Cardiology,Private,Medium,080-71222222,"Electronic City, Bangalore",12.8399,77.6770
+KIMS Hospital,Hyderabad,Telangana,Multi-Specialty,Private,High,040-44885000,"Secunderabad, Hyderabad",17.4399,78.4983

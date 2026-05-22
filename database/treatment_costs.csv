@@ -1,0 +1,21 @@
+disease,department,min_cost,max_cost,government_min,government_max,duration_days
+Heart Attack,Cardiology,150000,500000,20000,80000,7
+Heart Surgery,Cardiology,200000,600000,30000,100000,10
+Chest Pain,Cardiology,10000,50000,2000,10000,2
+Kidney Stone,Urology,40000,150000,8000,30000,3
+Kidney Failure,Nephrology,100000,400000,20000,80000,14
+Diabetes,Endocrinology,5000,20000,1000,5000,1
+Brain Stroke,Neurology,100000,400000,20000,80000,10
+Brain Tumor,Neurology,300000,800000,50000,150000,15
+Fracture,Orthopedics,20000,80000,5000,20000,5
+Joint Replacement,Orthopedics,150000,400000,30000,80000,7
+Appendix,General Surgery,30000,80000,8000,20000,3
+Pregnancy,Gynecology,20000,80000,5000,15000,3
+Cancer,Oncology,200000,1000000,40000,200000,30
+Fever,General,2000,8000,500,2000,1
+Breathing Problem,Pulmonology,15000,60000,3000,15000,3
+Asthma,Pulmonology,10000,40000,2000,8000,2
+Typhoid,General,5000,20000,1000,5000,3
+Dengue,General,10000,40000,2000,8000,4
+Eye Problem,Ophthalmology,10000,80000,2000,15000,1
+Skin Disease,Dermatology,3000,20000,500,5000,1

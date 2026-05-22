@@ -1,0 +1,27 @@
+# Environment
+venv/
+.env
+*.env
+
+# Secrets
+.streamlit/secrets.toml
+
+# Database (local only)
+database/healthcare.db
+
+# Python cache
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+.Python
+
+# ChromaDB local data
+rag/chroma_db/
+
+# VS Code
+.vscode/
+
+# OS files
+.DS_Store
+Thumbs.db
