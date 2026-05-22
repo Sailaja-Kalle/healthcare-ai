@@ -46,117 +46,54 @@ def audio_player(text, language, label="🔊 Listen:"):
 
 def render_main_ui():
     st.set_page_config(
-        st.markdown("""
-<style>
-    /* Main background */
-    .stApp {
-        background: linear-gradient(135deg, #fce4ec, #f3e5f5, #e1f5fe, #fffde7);
-    }
-
-    /* Sidebar */
-    [data-testid="stSidebar"] {
-        background: linear-gradient(180deg, #f8bbd0, #e1bee7);
-    }
-
-    /* Buttons */
-    .stButton > button {
-        background: linear-gradient(135deg, #e91e8c, #9c27b0) !important;
-        color: white !important;
-        border: none !important;
-        border-radius: 25px !important;
-        font-weight: 500 !important;
-    }
-
-    .stButton > button:hover {
-        background: linear-gradient(135deg, #ad1457, #6a1b9a) !important;
-        transform: scale(1.02);
-    }
-
-    /* Tabs */
-    .stTabs [data-baseweb="tab"] {
-        background: #fce4ec !important;
-        border-radius: 20px !important;
-        color: #880e4f !important;
-        margin-right: 6px !important;
-        font-weight: 500 !important;
-    }
-
-    .stTabs [aria-selected="true"] {
-        background: linear-gradient(135deg, #e91e8c, #9c27b0) !important;
-        color: white !important;
-    }
-
-    /* Input boxes */
-    .stTextInput > div > div > input,
-    .stTextArea > div > div > textarea {
-        border: 2px solid #ce93d8 !important;
-        border-radius: 12px !important;
-        background: #fdf6ff !important;
-    }
-
-    .stTextInput > div > div > input:focus,
-    .stTextArea > div > div > textarea:focus {
-        border-color: #9c27b0 !important;
-        box-shadow: 0 0 0 2px #e1bee7 !important;
-    }
-
-    /* Metric cards */
-    [data-testid="metric-container"] {
-        background: linear-gradient(135deg, #fce4ec, #e1bee7) !important;
-        border-radius: 16px !important;
-        padding: 1rem !important;
-        border: 1px solid #f48fb1 !important;
-    }
-
-    /* Headers */
-    h1, h2, h3 {
-        color: #6a1b9a !important;
-    }
-
-    /* Info/Success boxes */
-    .stInfo {
-        background: #e1f5fe !important;
-        border-left: 4px solid #03a9f4 !important;
-        border-radius: 10px !important;
-    }
-
-    .stSuccess {
-        background: #f3e5f5 !important;
-        border-left: 4px solid #9c27b0 !important;
-        border-radius: 10px !important;
-    }
-
-    /* Selectbox */
-    .stSelectbox > div > div {
-        border: 2px solid #ce93d8 !important;
-        border-radius: 12px !important;
-        background: #fdf6ff !important;
-    }
-
-    /* Expander */
-    .streamlit-expanderHeader {
-        background: linear-gradient(135deg, #fce4ec, #e1f5fe) !important;
-        border-radius: 10px !important;
-        color: #6a1b9a !important;
-    }
-
-    /* Title bar color */
-    .stTitle {
-        color: #ad1457 !important;
-    }
-
-    /* Spinner */
-    .stSpinner > div {
-        border-top-color: #9c27b0 !important;
-    }
-</style>
-""", unsafe_allow_html=True)
         page_title="AI Healthcare Assistant",
         page_icon="⚕️",
         layout="wide"
     )
 
-    # ═══════════════ LOGIN GATE ═══════════════
+    st.markdown(
+        """
+<style>
+    .stApp {
+        background: linear-gradient(135deg, #fce4ec, #f3e5f5, #e1f5fe, #fffde7);
+    }
+    [data-testid="stSidebar"] {
+        background: linear-gradient(180deg, #f8bbd0, #e1bee7);
+    }
+    .stButton > button {
+        background: linear-gradient(135deg, #e91e8c, #9c27b0) !important;
+        color: white !important;
+        border: none !important;
+        border-radius: 25px !important;
+    }
+    .stTabs [data-baseweb="tab"] {
+        background: #fce4ec !important;
+        border-radius: 20px !important;
+        color: #880e4f !important;
+    }
+    .stTabs [aria-selected="true"] {
+        background: linear-gradient(135deg, #e91e8c, #9c27b0) !important;
+        color: white !important;
+    }
+    .stTextInput > div > div > input,
+    .stTextArea > div > div > textarea {
+        border: 2px solid #ce93d8 !important;
+        border-radius: 12px !important;
+    }
+    [data-testid="metric-container"] {
+        background: linear-gradient(135deg, #fce4ec, #e1bee7) !important;
+        border-radius: 16px !important;
+        border: 1px solid #f48fb1 !important;
+    }
+    h1, h2, h3 { color: #6a1b9a !important; }
+    .stInfo { background: #e1f5fe !important; border-left: 4px solid #03a9f4 !important; }
+    .stSuccess { background: #f3e5f5 !important; border-left: 4px solid #9c27b0 !important; }
+</style>
+        """,
+        unsafe_allow_html=True
+    )
+
+    # LOGIN GATE
     if "logged_in" not in st.session_state:
         st.session_state["logged_in"] = False
 
@@ -164,7 +101,7 @@ def render_main_ui():
         render_login_page()
         return
 
-    # ═══════════════ TOP BAR (after login) ═══════════════
+    # TOP BAR
     col1, col2 = st.columns([8, 2])
     with col1:
         st.title("⚕️ AI Healthcare Assistant")
@@ -185,15 +122,15 @@ def render_main_ui():
     hospital_type = settings["hospital_type"]
 
     tab1, tab2, tab3, tab4, tab5, tab6 = st.tabs([
-    "🔍 Find Hospitals",
-    "💬 AI Chat",
-    "💰 Cost Estimator",
-    "📚 Medical Knowledge Base",
-    "📜 My History",
-    "🤖 Symptom Checker"
-])
+        "🔍 Find Hospitals",
+        "💬 AI Chat",
+        "💰 Cost Estimator",
+        "📚 Medical Knowledge Base",
+        "📜 My History",
+        "🤖 Symptom Checker"
+    ])
 
-    # ═══════════════ TAB 1 - FIND HOSPITALS ═══════════════
+    # TAB 1 - FIND HOSPITALS
     with tab1:
         st.subheader("🔍 Describe Your Health Problem")
 
@@ -277,7 +214,6 @@ def render_main_ui():
                     st.info(ai_analysis)
                     audio_player(ai_analysis, language, "🔊 Listen to AI Analysis:")
 
-                    # Save to history
                     if st.session_state.get("user_id"):
                         save_history(st.session_state["user_id"], "hospital_search", symptoms, ai_analysis, language)
 
@@ -325,11 +261,11 @@ def render_main_ui():
                         }
                         audio_player(tips_msgs.get(language, tips_msgs["English"]), language, "🔊 First Aid Tips:")
 
-    # ═══════════════ TAB 2 - AI CHAT ═══════════════
+    # TAB 2 - AI CHAT
     with tab2:
         render_chatbot(language, city, hospital_type)
 
-    # ═══════════════ TAB 3 - COST ESTIMATOR ═══════════════
+    # TAB 3 - COST ESTIMATOR
     with tab3:
         st.subheader("💰 Treatment Cost Estimator")
 
@@ -381,13 +317,12 @@ def render_main_ui():
                         }
                         audio_player(cost_msgs.get(language, cost_msgs["English"]), language, "🔊 Cost Details:")
 
-                        # Save to history
                         if st.session_state.get("user_id"):
                             save_history(st.session_state["user_id"], "cost_estimate", disease_input, f"Gov: {cost_info['government_cost']} | Pvt: {cost_info['private_cost']} | Days: {cost_info['duration_days']}", language)
                     else:
                         st.warning("Cost information not found. Try different condition name.")
 
-    # ═══════════════ TAB 4 - RAG KNOWLEDGE BASE ═══════════════
+    # TAB 4 - RAG KNOWLEDGE BASE
     with tab4:
         st.subheader("📚 Medical Knowledge Base")
         st.markdown("Ask anything about diseases, medicines, government schemes, or hospital costs.")
@@ -454,7 +389,6 @@ def render_main_ui():
                     response_placeholder.markdown(full_response)
                     audio_player(full_response, language, "🔊 Listen to Answer:")
 
-                    # Save to history
                     if st.session_state.get("user_id"):
                         save_history(st.session_state["user_id"], "rag_search", rag_query, full_response, language)
 
@@ -466,9 +400,10 @@ def render_main_ui():
                             with st.expander(f"Source {i} — {category_label}"):
                                 st.write(doc["text"])
 
-    # ═══════════════ TAB 5 - HISTORY ═══════════════
+    # TAB 5 - HISTORY
     with tab5:
         render_history_tab()
 
+    # TAB 6 - SYMPTOM CHECKER
     with tab6:
         render_symptom_checker()
