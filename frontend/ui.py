@@ -219,13 +219,7 @@ def render_main_ui():
 
                     recommendations = get_recommendations(symptoms, search_city, h_type)
                     hospitals = recommendations["hospitals"]
-                    
-                    if hospitals is not None and not hospitals.empty:
-                        exact_match = hospitals["city"].str.lower().str.contains(search_city.lower()).any()
-                        h_title = f"🏥 Hospitals in {search_city}" if exact_match else f"🏥 Hospitals near {search_city}"
-                    else:
-                        h_title = f"🏥 Hospitals near {search_city}"
-                        render_hospital_list(hospitals, h_title)
+                    render_hospital_list(hospitals, f"🏥 Hospitals in and near to  {search_city}")
 
                     if hospitals is not None and not hospitals.empty:
                         st.markdown("---")
